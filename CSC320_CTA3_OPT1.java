@@ -2,7 +2,7 @@
     
 import java.util.Scanner;
 
-public class taxCalculatorThree {
+public class CSC320_CTA3_OPT1 {
 
     public static void main (String[] args) {
         Scanner userInput = new Scanner(System.in);
