@@ -24,7 +24,7 @@ public class VehicleTwo {
     @Override
     public String toString() {
         try {
-            return make + "" + model + "" + color + "" + year + "" + mileage + "";
+            return make + " " + model + " " + color + " " + year + " " + mileage + " ";
         }
         catch (Exception e) {
             System.out.println("An error has occurred" + e.getMessage());

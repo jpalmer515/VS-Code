@@ -1,3 +1,9 @@
+// Changed from having four methods, to have a single method controlling the vehicle information.
+// Create a method for handling how the inventory will be displayed.
+// This method will also encompass the header for the inventory, making it more visually appealing.
+// Utilize a while loop to keep the program running until the user decides to exit the program
+// Add an exit menu button and logic
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.BufferedWriter;
@@ -9,7 +15,7 @@ class Main {
 
     public static void displayInventory (ArrayList<VehicleTwo> vehicleInventory) {
         try {
-            String HeaderString = String.join(" ", "MAKE", "MODEL", "COLOR", "YEAR", "MILEAGE");
+            String HeaderString = String.join( " ", "MAKE", "MODEL", "COLOR", "YEAR", "MILEAGE");
             System.out.println(HeaderString);
             for (int i = 0; i < vehicleInventory.size(); i++) {
                 System.out.println(vehicleInventory.get(i));
@@ -51,6 +57,8 @@ class Main {
         else
             if (menuNumber == 1) {
                 try {
+                    //Tried requesting all vehicle information at once, but didn't output the way I wanted it to
+                    //Changed to reflect requesting each piece of information separately and then triggering the scanner
                     System.out.printf("\nEnter make: ");
                         String make = UserInput.next();
                     System.out.printf("Enter model: ");
@@ -64,7 +72,7 @@ class Main {
                     VehicleTwo newVehicle = new VehicleTwo(make, model, color, year, mileage);
                     vehicleInventory.add(newVehicle);
                     System.out.println("\nVehicle has been added:");
-                    System.out.println("\n" + make + model + color + year + mileage);
+                    System.out.println(make + " " + model + " " + color + " " + year + " " + mileage + " ");
                 }
                 catch (Exception e) {
                     System.out.println("An error has occurred" + e.getMessage());
@@ -100,7 +108,8 @@ class Main {
                             
                             //Changing information at vehicleIndex with newVehicle information
                             vehicleInventory.set(vehicleIndex, newVehicle);
-                            System.out.printf("\nVehicle has been updated\n");
+                            System.out.printf("\nVehicle has been updated:\n");
+                            System.out.println("---------------------------------");
                             displayInventory(vehicleInventory);
                         }
                         catch (Exception e) {
