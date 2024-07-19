@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class PracticeTwo {
     
@@ -7,18 +6,32 @@ public class PracticeTwo {
 
         Scanner userFloatInput = new Scanner(System.in);
 
-        ArrayList userFloatList = new ArrayList<>();
+        int startingNumberOfLoops = 0;
+        int maxNumberOfLoops = 5;
+        float numbersAdded = 0;
+        float numbersAveraged = 0;
+        float largestNumber = -999999999;
+        float smallestNumber = Float.MAX_VALUE;
+        double numbersPlusInterest = 0;
 
-        int numberOfLoops = 5;
-
-        while (userFloatList.size() < numberOfLoops) {
+        while (startingNumberOfLoops < maxNumberOfLoops) {
 
             System.out.println("Please enter a number");
             float userFloat = userFloatInput.nextFloat();
-            userFloatList.add(userFloat);
+            numbersAdded = numbersAdded + userFloat;
+            numbersAveraged = numbersAdded / maxNumberOfLoops;
+            if (largestNumber < userFloat) {
+                largestNumber = userFloat;
+            }
+            else if (smallestNumber > userFloat) {
+                smallestNumber = userFloat;
+            }
+            double interestRate = .2;
+            numbersPlusInterest = numbersAdded * interestRate;
+            startingNumberOfLoops++;
         }
 
-        System.out.println(userFloatList);
+        System.out.println("Total: " + numbersAdded + ", Average: " + numbersAveraged + ", Max: " + largestNumber + ", Min: " + smallestNumber + ", Interest: " + numbersPlusInterest );
     }
 }
 
