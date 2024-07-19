@@ -11,7 +11,7 @@ public class PracticeTwo {
         float numbersAdded = 0;
         float numbersAveraged = 0;
         float largestNumber = -999999999;
-        float smallestNumber = Float.MAX_VALUE;
+        float smallestNumber = 999999999;
         double numbersPlusInterest = 0;
 
         while (startingNumberOfLoops < maxNumberOfLoops) {
@@ -23,7 +23,7 @@ public class PracticeTwo {
             if (largestNumber < userFloat) {
                 largestNumber = userFloat;
             }
-            else if (smallestNumber > userFloat) {
+            if (smallestNumber > userFloat) {
                 smallestNumber = userFloat;
             }
             double interestRate = .2;
@@ -35,9 +35,3 @@ public class PracticeTwo {
     }
 }
 
-
-// get 5 integers from a user
-// add type check
-// store 5 integers
-// create a for loop to return the total of all 5
-// add average, max, min and interest to the loop
